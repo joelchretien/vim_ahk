@@ -672,7 +672,12 @@ Esc:: ; Just send Esc at converting, long press for normal Esc.
     Send,{Esc}
     Return
   }
-  VimSetNormal()
+  if(InStr(VimMode, "Normal")) {
+    Send,{Esc}
+    Return
+  }else{
+    VimSetNormal()
+  }
 Return
 
 #If WinActive("ahk_group " . VimGroupName) and (InStr(VimMode, "Insert")) and (VimJJ == 1)
