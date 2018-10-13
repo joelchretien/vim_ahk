@@ -676,6 +676,9 @@ Esc:: ; Just send Esc at converting, long press for normal Esc.
     Send,{Esc}
     Return
   }else{
+    if(InStr(VimMode, "Visual")) {
+      Send,{Left}
+    }
     VimSetNormal()
   }
 Return
