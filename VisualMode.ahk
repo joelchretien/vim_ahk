@@ -10,7 +10,7 @@ Return
 
 +v::
   VimSetMode("Vim_VisualLineFirst")
-  Send, {Home}+{Down}
+  Send, {Home}+{Right}+{End}
 Return
 
 ; ydc
