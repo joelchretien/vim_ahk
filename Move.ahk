@@ -85,13 +85,15 @@ VimMove(key="", shift=0){
     VimSetMode("Vim_Normal")
   }else if(VimMode == "Vim_ydc_d"){
     Clipboard :=
-    Send, ^x
+    Send, ^c
     ClipWait, 1
+    Send, {Space}{BS}
     VimSetMode("Vim_Normal")
   }else if(VimMode == "Vim_ydc_c"){
     Clipboard :=
-    Send, ^x
+    Send, ^c
     ClipWait, 1
+    Send, {Space}{BS}
     VimSetMode("Insert")
   }
   VimSetMode("", 0, 0)

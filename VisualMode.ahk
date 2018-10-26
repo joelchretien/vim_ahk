@@ -30,8 +30,9 @@ Return
 
 d::
   Clipboard :=
-  Send, ^x
+  Send, ^c
   ClipWait, 1
+  Send, {Space}{BS}
   if(InStr(VimMode,"Line")){
     VimSetMode("Vim_Normal", 0, 0, 1)
   }else{
@@ -41,8 +42,9 @@ Return
 
 x::
   Clipboard :=
-  Send, ^x
+  Send, ^c
   ClipWait, 1
+  Send, {Space}{BS}
   if(InStr(VimMode, "Line")){
     VimSetMode("Vim_Normal", 0, 0, 1)
   }else{
@@ -52,8 +54,9 @@ Return
 
 c::
   Clipboard :=
-  Send, ^x
+  Send, ^c
   ClipWait, 1
+  Send, {Space}{BS}
   if(InStr(VimMode, "Line")){
     VimSetMode("Insert", 0, 0, 1)
   }else{
