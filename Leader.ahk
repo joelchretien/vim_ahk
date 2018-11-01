@@ -43,22 +43,22 @@ Return
   VimSetMode("Vim_Normal")
 Return
 
-;MS Word - Heading 1
+;MS Word - Heading 2
 2::
   Send, ^!2
   VimSetMode("Vim_Normal")
 Return
-;MS Word - Heading 1
+;MS Word - Heading 3
 3::
   Send, ^!3
   VimSetMode("Vim_Normal")
 Return
-;MS Word - Heading 1
+;MS Word - Heading 4
 4::
   Send, ^!4
   VimSetMode("Vim_Normal")
 Return
-;MS Word - Heading 1
+;MS Word - Heading 5
 5::
   Send, ^!5
   VimSetMode("Vim_Normal")
