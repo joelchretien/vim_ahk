@@ -15,6 +15,9 @@ Return
 
 ; ydc
 #If WinActive("ahk_group " . VimGroupName) and (InStr(VimMode, "Visual"))
+
+Space::VimSetMode("Vim_Leader")
+
 y::
   Clipboard :=
   Send, ^c
