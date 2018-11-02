@@ -36,7 +36,10 @@ Return
 Return
 
 #If WinActive("ahk_group " . VimGroupName) and (VimMode == "Vim_Normal")
-Space::VimSetMode("Vim_Leader")
+
+Space::
+  VimSetMode("Vim_Leader_N")
+Return
 
 ; period
 .::Send, +^{Right}{BS}^v

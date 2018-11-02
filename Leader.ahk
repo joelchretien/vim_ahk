@@ -1,79 +1,105 @@
-; Perform vim leader actions (Then exit to vim normal mode) {{{
-#If WinActive("ahk_group " . VimGroupName) && (VimMode == "Vim_Leader")
+VimToNormal() {
+  if(VimMode == "Vim_Leader_N") {
+    VimSetMode("Vim_Normal")
+  } else {
+    VimSetMode("Vim_Visual")
+  }
+}
+
+; Perform vim leader actions (any rich text editor), then exit to vim normal mode {{{
+#If WinActive("ahk_group " . VimGroupName) && (InStr(VimMode, "Vim_Leader"))
 
 ;Underline
 u::
   Send, ^u
-  VimSetMode("Vim_Normal")
+  VimToNormal()
 Return
 
 ;Bold
 b::
   Send, ^b
-  VimSetMode("Vim_Normal")
+  VimToNormal()
 Return
 
 ;Italic
 i::
   Send, ^i
-  VimSetMode("Vim_Normal")
+  VimToNormal()
+Return
+; }}}
+
+; Perform vim leader actions (Outlook-specific), then exit to vim normal mode {{{
+#If WinActive("ahk_exe outlook.exe") && (InStr(VimMode, "Vim_Leader"))
+;Highlight
+h::
+  Send, ^!h
+  VimToNormal()
+Return
+; }}}
+
+; Perform vim leader actions (Word-specific), then exit to vim normal mode {{{
+#If WinActive("ahk_exe WINWORD.exe") && (InStr(VimMode, "Vim_Leader"))
+;Highlight
+h::
+  Send, ^!h
+  VimToNormal()
 Return
 
-;MS Word - Insert Comment
+; Insert Comment
 m::
   Send, ^!m
-  VimSetMode("Vim_Normal")
+  VimToNormal()
 Return
 
-;MS Word - Insert Hyperlink
+; Insert Hyperlink
 k::
   Send, ^k
-  VimSetMode("Vim_Normal")
+  VimToNormal()
 Return
 
 ;Print
 p::
   Send, ^p
-  VimSetMode("Vim_Normal")
+  VimToNormal()
 Return
 
-;MS Word - Heading 1
+; Heading 1
 1::
   Send, ^!1
-  VimSetMode("Vim_Normal")
+  VimToNormal()
 Return
 
-;MS Word - Heading 2
+; Heading 2
 2::
   Send, ^!2
-  VimSetMode("Vim_Normal")
+  VimToNormal()
 Return
-;MS Word - Heading 3
+; Heading 3
 3::
   Send, ^!3
-  VimSetMode("Vim_Normal")
+  VimToNormal()
 Return
-;MS Word - Heading 4
+; Heading 4
 4::
   Send, ^!4
-  VimSetMode("Vim_Normal")
+  VimToNormal()
 Return
-;MS Word - Heading 5
+; Heading 5
 5::
   Send, ^!5
-  VimSetMode("Vim_Normal")
+  VimToNormal()
 Return
 
-;MS Word - Tab Right
+; Tab Right
 >::
   Send, ^m
-  VimSetMode("Vim_Normal")
+  VimToNormal()
 Return
 
-;MS Word - Tab Left
+; Tab Left
 <::
   Send, ^+m
-  VimSetMode("Vim_Normal")
+  VimToNormal()
 Return
 
 ; }}}
