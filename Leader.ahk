@@ -35,6 +35,10 @@ h::
   Send, ^!h
   VimToNormal()
 Return
+
+r::
+  Send, ^r
+  VimToNormal()
 ; }}}
 
 ; Perform vim leader actions (Word-specific), then exit to vim normal mode {{{
