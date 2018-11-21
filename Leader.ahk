@@ -49,6 +49,15 @@ h::
   VimToNormal()
 Return
 
+; Bullet
+t::
+  Send, !h
+  Send, u
+  Send, {Right}
+  Send, {Enter}
+  VimToNormal()
+Return
+
 ; Insert Comment
 m::
   Send, ^!m
